@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  Lint:
+  CI:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -34,8 +34,9 @@ jobs:
         uses: hashicorp/setup-terraform@v4
         with: ">= 1.15.3"
 
-      - name: Terraform format check
+      - name: Terraform validation
         working-directory: infra
         run: |
           terraform init -backend=false
           terraform fmt -check
+          terraform validate -no-color
