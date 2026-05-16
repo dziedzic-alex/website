@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  CI:
+  Lint & Terraform validation:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
