@@ -16,6 +16,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner"
 
       - name: Setup Node
