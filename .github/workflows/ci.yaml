@@ -1,0 +1,43 @@
+name: CI
+run-name: Triggered by ${{ github.actor }}
+
+on: [push]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner"
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v4
+        with: ">= 1.15.3"
+
+      - name: Terraform validation
+        working-directory: infra
+        run: |
+          terraform init -backend=false
+          terraform fmt -check
+          terraform validate -no-color
