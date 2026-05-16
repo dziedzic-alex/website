@@ -1,0 +1,77 @@
+name: Deploy
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  Deploy:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner"
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build bundle
+        run: npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6.1.1
+        with:
+          role-to-assume: arn:aws:iam::433851229368:role/github_actions
+          aws-region: us-east-2
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v4
+        with: ">= 1.15.3"
+
+      - name: Initialize Terraform
+        working-directory: infra
+        run:
+          terraform init
+
+      - name: Validate Terraform
+        working-directory: infra
+        run:
+          terraform validate
+
+      - name: Apply
+        working-directory: infra
+        run:
+          terraform apply -auto-approve
+
+      - name: Parse Terraform outputs
+        id: tf-parse
+        working-directory: infra
+        run: |
+          echo "website_bucket=$(terraform output -raw website_bucket_name)" >> "$GITHUB_OUTPUT"
+          echo "cloudfront_distribution=$(terraform output -raw cloudfront_distribution_id)" >> "$GITHUB_OUTPUT"
+
+      - name: Push bundle to S3
+        run: aws s3 sync dist/ s3://${{ steps.tf-parse.outputs.website_bucket }}
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ steps.tf-parse.outputs.cloudfront_distribution }}" \
+            --paths "/*"
