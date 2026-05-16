@@ -16,7 +16,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-        
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner"
 
       - name: Setup Node
@@ -33,7 +32,8 @@ jobs:
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v4
-        with: ">= 1.15.3"
+        with: 
+          terraform_version: "1.15.3"
 
       - name: Terraform validation
         working-directory: infra

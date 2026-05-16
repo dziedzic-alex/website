@@ -43,7 +43,8 @@ jobs:
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v4
-        with: ">= 1.15.3"
+        with: 
+          terraform_version: "1.15.3"
 
       - name: Initialize Terraform
         working-directory: infra
