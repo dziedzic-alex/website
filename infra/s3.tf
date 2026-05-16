@@ -1,5 +1,10 @@
 data "aws_region" "current" {}
 
+resource "aws_s3_bucket" "website_terraform_state_bucket" {
+  bucket_prefix    = "website_terraform"
+  bucket_namespace = "account-regional"
+  region           = data.aws_region.current.region
+}
 
 resource "aws_s3_bucket" "website_bucket" {
   bucket_prefix    = "website"
