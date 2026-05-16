@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint_terraform_validation:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -24,6 +24,9 @@ jobs:
 
       - name: Install Node dependencies
         run: npm ci
+
+      - name: Build bundle
+        run: npm run build
 
       - name: Lint
         run: npm run lint
