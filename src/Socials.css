@@ -1,0 +1,22 @@
+.socials-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.socials-container a {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.socials-container a:hover {
+  color: #a78bfa;
+  transform: translateY(-1px);
+}

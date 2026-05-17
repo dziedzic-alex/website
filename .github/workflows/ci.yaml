@@ -25,14 +25,14 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Build bundle
-        run: npm run build
-
       - name: Lint
         run: npm run lint
 
       - name: Prettier
         run: npx prettier --check .
+
+      - name: Build bundle
+        run: npm run build
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v4

@@ -1,11 +1,16 @@
+import { Routes } from "react-router-dom";
+
+import Navbar from "./Navbar";
+
 import "./App.css";
 
 function App() {
   return (
-    <>
-      <div className="header">Whano t up boi?</div>
-      <div>Nothing much boi.</div>
-    </>
+    <div className="app-container">
+      <Navbar />
+
+      <Routes></Routes>
+    </div>
   );
 }
 
