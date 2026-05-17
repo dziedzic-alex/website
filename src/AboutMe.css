@@ -1,0 +1,14 @@
+.about-me-container {
+  display: flex;
+  gap: 20px;
+}
+
+.about-me-copy {
+  width: 500px;
+}
+
+.about-me-image {
+  height: 400px;
+  width: 300px;
+  object-fit: cover;
+}
