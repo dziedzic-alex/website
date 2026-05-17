@@ -1,16 +1,20 @@
-import { Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-import Navbar from "./Navbar";
+import Navbar from "./Navbar.tsx";
+import Home from "./Home.tsx";
 
 import "./App.css";
 
 function App() {
   return (
-    <div className="app-container">
+    <>
       <Navbar />
-
-      <Routes></Routes>
-    </div>
+      <div className="app-container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
