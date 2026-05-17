@@ -7,7 +7,7 @@ function AboutMe() {
     <div className="about-me-container">
       <div className="about-me-copy">
         <h1>Hello, I'm Alex</h1>
-        <h2>Software engineer building reliable, user-focused products</h2>
+        <h2>Software engineer building reliable, user-focused products.</h2>
         <p>
           I build software with an eye for clarity, reliability, and long-term
           maintainability. My work spans frontend, backend, infrastructure, and

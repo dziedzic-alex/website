@@ -1,5 +1,6 @@
 .home-container {
   display: flex;
+  box-sizing: border-box;
   width: 100%;
   justify-content: center;
   padding: 20px;

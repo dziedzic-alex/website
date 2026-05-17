@@ -1,14 +1,42 @@
 .about-me-container {
   display: flex;
-  gap: 20px;
+  gap: 64px;
+  width: 100%;
+  max-width: 1120px;
+  padding: 72px 36px;
 }
 
 .about-me-copy {
-  width: 500px;
+  max-width: 640px;
+}
+
+.about-me-copy h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2.75rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.about-me-copy h2 {
+  max-width: 580px;
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.about-me-copy p {
+  max-width: 580px;
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.68);
 }
 
 .about-me-image {
-  height: 400px;
-  width: 300px;
+  width: min(32vw, 360px);
+  height: 460px;
   object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
 }
