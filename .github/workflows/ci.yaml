@@ -31,9 +31,12 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Prettier
+        run: npx prettier --check .
+
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v4
-        with: 
+        with:
           terraform_version: "1.15.3"
 
       - name: Terraform validation
