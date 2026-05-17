@@ -1,0 +1,25 @@
+.navbar-container {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  top: 0px;
+  left: 0px;
+  border-bottom: 1px solid green;
+}
+
+.navbar-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar-content a {
+  color: inherit;
+  text-decoration: none;
+}

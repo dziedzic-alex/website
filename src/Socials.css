@@ -1,0 +1,10 @@
+.socials-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.socials-container a {
+  display: flex;
+  align-items: center;
+}
