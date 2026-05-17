@@ -9,7 +9,7 @@ function App() {
       What up boi?
     </div>
     <div>
-      Nothing much boi!
+      Nothing much boi.
     </div>
     </>
   )
