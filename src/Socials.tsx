@@ -5,7 +5,7 @@ function Socials() {
   return (
     <div className="socials-container">
       <a
-        href="/public/Dziedzic_Alex_Resume.pdf"
+        href="/Dziedzic_Alex_Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
       >
