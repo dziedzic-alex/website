@@ -41,23 +41,20 @@ jobs:
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v4
-        with: 
+        with:
           terraform_version: "1.15.3"
 
       - name: Initialize Terraform
         working-directory: infra
-        run:
-          terraform init
+        run: terraform init
 
       - name: Validate Terraform
         working-directory: infra
-        run:
-          terraform validate
+        run: terraform validate
 
       - name: Apply
         working-directory: infra
-        run:
-          terraform apply -auto-approve
+        run: terraform apply -auto-approve
 
       - name: Parse Terraform outputs
         id: tf-parse
