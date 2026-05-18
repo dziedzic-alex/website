@@ -1,20 +1,24 @@
 .about-me-container {
-  display: flex;
-  gap: 64px;
+  display: grid;
   width: 100%;
   max-width: 1120px;
-  padding: 72px 36px;
+  grid-template-columns: minmax(0, 620px) 380px;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "heading image"
+    "copy image";
+  column-gap: 64px;
+}
+
+.about-me-heading {
+  grid-area: heading;
+  font-size: clamp(1.4rem, 1.5vw, 2.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
 }
 
 .about-me-copy {
-  max-width: 640px;
-}
-
-.about-me-copy h1 {
-  margin: 0 0 16px;
-  font-size: clamp(2.75rem, 6vw, 5rem);
-  line-height: 0.95;
-  letter-spacing: -0.06em;
+  grid-area: copy;
 }
 
 .about-me-copy h2 {
@@ -33,10 +37,39 @@
 }
 
 .about-me-image {
-  width: min(32vw, 360px);
-  height: 460px;
+  width: 380px;
+  height: 480px;
   object-fit: cover;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 28px;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  grid-area: image;
+  justify-self: center;
+  margin-top: 35px;
+}
+
+@media (max-width: 650px) {
+  .about-me-container {
+    gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heading"
+      "image"
+      "copy";
+  }
+
+  .about-me-heading {
+    justify-self: center;
+  }
+
+  .about-me-image {
+    margin: 0;
+  }
+}
+
+@media (max-width: 440px) {
+  .about-me-image {
+    width: 320px;
+    height: 420px;
+  }
 }

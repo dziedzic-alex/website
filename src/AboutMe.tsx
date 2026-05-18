@@ -5,8 +5,10 @@ import "./AboutMe.css";
 function AboutMe() {
   return (
     <div className="about-me-container">
-      <div className="about-me-copy">
+      <div className="about-me-heading">
         <h1>Hello, I'm Alex</h1>
+      </div>
+      <div className="about-me-copy">
         <h2>Software engineer building reliable, user-focused products.</h2>
         <p>
           I build software with an eye for clarity, reliability, and long-term
