@@ -3,13 +3,13 @@ import type { IconType } from "react-icons";
 
 import "./Socials.css";
 
-type SocialLink = {
+interface SocialLink {
   href: string;
   label: string;
   ariaLabel?: string;
   icon?: IconType;
   color?: string;
-};
+}
 
 const SOCIAL_LINKS: SocialLink[] = [
   {
