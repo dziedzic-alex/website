@@ -3,7 +3,7 @@ import type { TechnologyEnum } from "./TechnologyGrid.tsx";
 
 import "./Project.css";
 
-type Props = {
+interface Props {
   title: string;
   summary: string;
   image: string;
@@ -11,7 +11,7 @@ type Props = {
   techStack: TechnologyEnum[];
   liveUrl?: string;
   sourceUrl?: string;
-};
+}
 
 function Project(props: Props) {
   const { title, summary, highlights, techStack, liveUrl, sourceUrl, image } =
@@ -22,7 +22,7 @@ function Project(props: Props) {
       <header className="project-header">
         <div className="project-header-top">
           <h2 className="project-title">{title}</h2>
-          {(liveUrl || sourceUrl) && (
+          {(liveUrl ?? sourceUrl) && (
             <div className="project-links">
               {liveUrl && (
                 <a

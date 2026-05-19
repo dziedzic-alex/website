@@ -54,9 +54,9 @@ const TECHNOLOGY_INFO: Record<
   GitHubActions: { icon: SiGithub, label: "GitHub Actions", color: "#ffffff" },
 };
 
-type Props = {
+interface Props {
   technologies: TechnologyEnum[];
-};
+}
 
 function TechnologyGrid(props: Props) {
   const { technologies } = props;
