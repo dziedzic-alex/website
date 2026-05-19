@@ -18,12 +18,13 @@ const PROJECTS: {
 }[] = [
   {
     title: "Personal Website",
-    summary: "A personal portfolio to show off my work",
+    summary:
+      "React portfolio on AWS — static hosting, CDN, and fully automated deploys",
     image: WebsiteImage,
     highlights: [
-      "App is just a bundle built with React, TypeScript, and Node",
-      "Deployed using Route53 for DNS handling, S3 to host the bundle, and CloudFront for faster serving via CDN",
-      "Automated workflows in terms of CD/CI using Terraform and GitHub Actions",
+      "Static React site — no server to run in production",
+      "AWS edge stack: Route 53 → CloudFront → S3",
+      "Terraform-defined infra; GitHub Actions runs CI on PRs and deploys on merge",
     ],
     techStack: [
       "React",
