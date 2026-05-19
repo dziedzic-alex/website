@@ -29,21 +29,21 @@ function Project(props: Props) {
       </ul>
       <h3>Tech Stack</h3>
       <TechnologyGrid technologies={techStack} />
-      <div className="project-links">
-        {liveUrl && (
-          <>
+      {(liveUrl || sourceUrl) && (
+        <div className="project-links">
+          {liveUrl && (
             <a href={liveUrl} target="_blank" rel="noopener noreferrer">
               Live
             </a>
-            *
-          </>
-        )}
-        {sourceUrl && (
-          <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
-            Source
-          </a>
-        )}
-      </div>
+          )}
+          {sourceUrl && liveUrl && <span>•</span>}
+          {sourceUrl && (
+            <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
+              Source
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 }
