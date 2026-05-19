@@ -18,33 +18,61 @@ function Project(props: Props) {
     props;
 
   return (
-    <div className="project-container">
-      <h1>{title}</h1>
-      <h2>{summary}</h2>
-      <img src={image} alt={`Image showcasing ${title} project`} />
-      <ul>
-        {highlights.map((highlight) => (
-          <li key={highlight}>{highlight}</li>
-        ))}
-      </ul>
-      <h3>Tech Stack</h3>
-      <TechnologyGrid technologies={techStack} />
-      {(liveUrl || sourceUrl) && (
-        <div className="project-links">
-          {liveUrl && (
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-              Live
-            </a>
-          )}
-          {sourceUrl && liveUrl && <span>•</span>}
-          {sourceUrl && (
-            <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
-              Source
-            </a>
-          )}
-        </div>
-      )}
-    </div>
+    <article className="project-container">
+      <header className="project-header">
+        <h2 className="project-title">{title}</h2>
+        <p className="project-summary">{summary}</p>
+      </header>
+
+      <div className="project-media">
+        <img
+          className="project-image"
+          src={image}
+          alt={`Screenshot of ${title}`}
+        />
+      </div>
+
+      <div className="project-details">
+        <section className="project-section">
+          <h3 className="project-section-label">Highlights</h3>
+          <ul className="project-highlights">
+            {highlights.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="project-section">
+          <h3 className="project-section-label">Tech stack</h3>
+          <TechnologyGrid technologies={techStack} />
+        </section>
+
+        {(liveUrl || sourceUrl) && (
+          <div className="project-links">
+            {liveUrl && (
+              <a
+                className="project-link"
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View live
+              </a>
+            )}
+            {sourceUrl && (
+              <a
+                className="project-link"
+                href={sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View source
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </article>
   );
 }
 
