@@ -20,7 +20,33 @@ function Project(props: Props) {
   return (
     <article className="project-container">
       <header className="project-header">
-        <h2 className="project-title">{title}</h2>
+        <div className="project-header-top">
+          <h2 className="project-title">{title}</h2>
+          {(liveUrl || sourceUrl) && (
+            <div className="project-links">
+              {liveUrl && (
+                <a
+                  className="project-link"
+                  href={liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View live
+                </a>
+              )}
+              {sourceUrl && (
+                <a
+                  className="project-link"
+                  href={sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View source
+                </a>
+              )}
+            </div>
+          )}
+        </div>
         <p className="project-summary">{summary}</p>
       </header>
 
@@ -46,31 +72,6 @@ function Project(props: Props) {
           <h3 className="project-section-label">Tech stack</h3>
           <TechnologyGrid technologies={techStack} />
         </section>
-
-        {(liveUrl || sourceUrl) && (
-          <div className="project-links">
-            {liveUrl && (
-              <a
-                className="project-link"
-                href={liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View live
-              </a>
-            )}
-            {sourceUrl && (
-              <a
-                className="project-link"
-                href={sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View source
-              </a>
-            )}
-          </div>
-        )}
       </div>
     </article>
   );
