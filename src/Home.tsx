@@ -45,12 +45,12 @@ const PROJECTS: {
   {
     title: "Console Chess",
     summary:
-      "Two-player chess in the terminal, written in C++ with an object-oriented design",
+      "Two-player terminal chess in C++, built around inheritance and polymorphism for piece movement",
     image: ChessImage,
     highlights: [
-      "Local two-player game loop with check and checkmate detection",
-      "Board, pieces, and players modeled as separate classes; each piece type defines its own movement rules",
-      "Pawn promotion and coordinate input; clone the repo and build with CMake",
+      "Two players in the terminal — full turns, check, and checkmate",
+      "Six piece types inherit from an abstract Piece class, each overriding move rules with virtual methods",
+      "Board, game loop, and player input split across separate classes, with pawn promotion on the back rank",
     ],
     techStack: ["Cpp", "CMake"],
     sourceUrl: "https://github.com/dziedzic-alex/chess",
