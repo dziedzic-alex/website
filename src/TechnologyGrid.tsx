@@ -6,6 +6,7 @@ import {
   SiTypescript,
   SiTerraform,
   SiGithub,
+  SiCmake,
 } from "react-icons/si";
 import { SiReact, SiPhp, SiPython, SiMysql, SiGraphql } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
@@ -22,6 +23,7 @@ export type TechnologyEnum =
   | "Node"
   | "PHP"
   | "Cpp"
+  | "CMake"
   | "Python"
   | "SQL"
   | "GraphQL"
@@ -43,6 +45,7 @@ const TECHNOLOGY_INFO: Record<
   Node: { icon: SiNodedotjs, label: "Node.js", color: "#5fa04e" },
   PHP: { icon: SiPhp, label: "PHP", color: "#777bb4" },
   Cpp: { icon: SiCplusplus, label: "C++", color: "#00599c" },
+  CMake: { icon: SiCmake, label: "CMake", color: "#064f8c" },
   Python: { icon: SiPython, label: "Python", color: "#3776ab" },
   SQL: { icon: SiMysql, label: "SQL", color: "#4479a1" },
   GraphQL: { icon: SiGraphql, label: "GraphQL", color: "#e10098" },

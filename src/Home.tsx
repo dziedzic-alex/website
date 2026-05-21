@@ -2,6 +2,7 @@ import AboutMe from "./AboutMe.tsx";
 import Skills from "./Skills.tsx";
 import Project from "./Project.tsx";
 import WebsiteImage from "./assets/personal_website_screenshot.jpg";
+import ChessImage from "./assets/chess.jpg";
 
 import type { TechnologyEnum } from "./TechnologyGrid.tsx";
 
@@ -40,6 +41,19 @@ const PROJECTS: {
     ],
     liveUrl: "https://alexdziedzic.com",
     sourceUrl: "https://github.com/dziedzic-alex/website",
+  },
+  {
+    title: "Console Chess",
+    summary:
+      "Two-player terminal chess in C++, built around inheritance and polymorphism for piece movement",
+    image: ChessImage,
+    highlights: [
+      "Two players in the terminal — full turns with check and checkmate detection",
+      "Six piece types inherit from an abstract Piece class, each overriding move rules with virtual methods",
+      "Board, game loop, and player input split across separate classes, with pawn promotion on the back rank",
+    ],
+    techStack: ["Cpp", "CMake"],
+    sourceUrl: "https://github.com/dziedzic-alex/chess",
   },
 ];
 
