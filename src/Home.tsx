@@ -48,7 +48,7 @@ const PROJECTS: {
       "Two-player terminal chess in C++, built around inheritance and polymorphism for piece movement",
     image: ChessImage,
     highlights: [
-      "Two players in the terminal — full turns, check, and checkmate",
+      "Two players in the terminal — full turns with check and checkmate detection",
       "Six piece types inherit from an abstract Piece class, each overriding move rules with virtual methods",
       "Board, game loop, and player input split across separate classes, with pawn promotion on the back rank",
     ],
