@@ -17,12 +17,12 @@ function AboutMe() {
           implementation.
         </p>
         <p>
-          I care most about clear behavior, sensible structure, and software that
-          stays dependable after it ships. I’m
-          building a stronger public portfolio of projects that stretch different
-          parts of the stack, because I learn best when I ship something real and
-          can stand behind the result. If you want the specifics — tools, shipped
-          work, and links to code — they’re in the sections below.
+          I care most about clear behavior, sensible structure, and software
+          that stays dependable after it ships. I’m building a stronger public
+          portfolio of projects that stretch different parts of the stack,
+          because I learn best when I ship something real and can stand behind
+          the result. If you want the specifics — tools, shipped work, and links
+          to code — they’re in the sections below.
         </p>
       </div>
       <img
