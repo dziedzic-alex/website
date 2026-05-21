@@ -2,6 +2,7 @@ import AboutMe from "./AboutMe.tsx";
 import Skills from "./Skills.tsx";
 import Project from "./Project.tsx";
 import WebsiteImage from "./assets/personal_website_screenshot.jpg";
+import ChessImage from "./assets/chess.jpg";
 
 import type { TechnologyEnum } from "./TechnologyGrid.tsx";
 
@@ -40,6 +41,19 @@ const PROJECTS: {
     ],
     liveUrl: "https://alexdziedzic.com",
     sourceUrl: "https://github.com/dziedzic-alex/website",
+  },
+  {
+    title: "Console Chess",
+    summary:
+      "Two-player chess in the terminal, written in C++ with an object-oriented design",
+    image: ChessImage,
+    highlights: [
+      "Local two-player game loop with check and checkmate detection",
+      "Board, pieces, and players modeled as separate classes; each piece type defines its own movement rules",
+      "Pawn promotion and coordinate input; clone the repo and build with CMake",
+    ],
+    techStack: ["Cpp", "CMake"],
+    sourceUrl: "https://github.com/dziedzic-alex/chess",
   },
 ];
 
