@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Alex Dziedzic">
+  <rect width="32" height="32" rx="7" fill="#08080c" />
+  <path
+    fill="#aa3bff"
+    d="M16 7 23.5 25h-3.3l-1.5-4.2h-7.4L9.8 25H6.5L16 7zm0 5.2-2.8 7.8h5.6L16 12.2z"
+  />
+</svg>

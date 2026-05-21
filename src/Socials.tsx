@@ -35,7 +35,7 @@ const SOCIAL_LINKS: SocialLink[] = [
     label: "Email",
     ariaLabel: "Email",
     icon: FaEnvelope,
-    color: "#ea4335",
+    color: "#ffffff",
   },
 ];
 
