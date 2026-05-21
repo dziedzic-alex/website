@@ -17,9 +17,12 @@ function AboutMe() {
           implementation.
         </p>
         <p>
-          I’m currently expanding my portfolio with projects like a C++ console
-          chess game, this site, and a larger feature-focused project coming
-          soon.
+          I care most about clear behavior, sensible structure, and software that
+          stays dependable after it ships. I’m
+          building a stronger public portfolio of projects that stretch different
+          parts of the stack, because I learn best when I ship something real and
+          can stand behind the result. If you want the specifics — tools, shipped
+          work, and links to code — they’re in the sections below.
         </p>
       </div>
       <img
