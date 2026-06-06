@@ -7,6 +7,8 @@ import {
   SiTerraform,
   SiGithub,
   SiCmake,
+  SiDocker,
+  SiFastapi,
 } from "react-icons/si";
 import { SiReact, SiPhp, SiPython, SiMysql, SiGraphql } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
@@ -32,7 +34,9 @@ export type TechnologyEnum =
   | "S3"
   | "CloudFront"
   | "Terraform"
-  | "GitHubActions";
+  | "GitHubActions"
+  | "Docker"
+  | "FastAPI";
 
 const TECHNOLOGY_INFO: Record<
   TechnologyEnum,
@@ -55,6 +59,8 @@ const TECHNOLOGY_INFO: Record<
   CloudFront: { icon: FaAws, label: "CloudFront", color: "#ff9900" },
   Terraform: { icon: SiTerraform, label: "Terraform", color: "#844fba" },
   GitHubActions: { icon: SiGithub, label: "GitHub Actions", color: "#ffffff" },
+  Docker: { icon: SiDocker, label: "Docker", color: "#2496ed" },
+  FastAPI: { icon: SiFastapi, label: "FastAPI", color: "#009688" },
 };
 
 interface Props {

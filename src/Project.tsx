@@ -6,7 +6,10 @@ import "./Project.css";
 interface Props {
   title: string;
   summary: string;
-  image: string;
+  media: {
+    type: "image" | "video";
+    url: string;
+  };
   highlights: string[];
   techStack: TechnologyEnum[];
   liveUrl?: string;
@@ -14,7 +17,7 @@ interface Props {
 }
 
 function Project(props: Props) {
-  const { title, summary, highlights, techStack, liveUrl, sourceUrl, image } =
+  const { title, summary, highlights, techStack, liveUrl, sourceUrl, media } =
     props;
 
   return (
@@ -51,11 +54,25 @@ function Project(props: Props) {
       </header>
 
       <div className="project-media">
-        <img
-          className="project-image"
-          src={image}
-          alt={`Screenshot of ${title}`}
-        />
+        {media.type === "image" && (
+          <img
+            className="project-media"
+            src={media.url}
+            alt={`Screenshot of ${title}`}
+          />
+        )}
+        {media.type === "video" && (
+          <video
+            className="project-media"
+            src={media.url}
+            controls
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label={`Video of ${title}`}
+          />
+        )}
       </div>
 
       <div className="project-details">
