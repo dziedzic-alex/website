@@ -25,6 +25,8 @@ function Skills() {
           "AWS",
           "Terraform",
           "GitHubActions",
+          "Docker",
+          "FastAPI",
         ]}
       />
     </section>
